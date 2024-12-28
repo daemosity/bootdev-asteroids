@@ -31,6 +31,12 @@ def main():
         
         for thing in updatable:
             thing.update(deltatime)
+        
+        for obj in asteroids:
+            if obj.is_colliding_with(player):
+                print("Game over!")
+                exit()
+                
         for thing in drawable:
             thing.draw(screen)
         
