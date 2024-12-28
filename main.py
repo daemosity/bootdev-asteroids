@@ -35,14 +35,14 @@ def main():
         for thing in updatable:
             thing.update(deltatime)
         
-        for obj in asteroids:
-            if obj.is_colliding_with(player):
+        for asteroid in asteroids:
+            if asteroid.is_colliding_with(player):
                 print("Game over!")
                 exit()
             
             for shot in shots:
-                if obj.is_colliding_with(shot):
-                    obj.kill()
+                if asteroid.is_colliding_with(shot):
+                    asteroid.split()
                     shot.kill()
                 
         for thing in drawable:
